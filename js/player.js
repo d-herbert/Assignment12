@@ -34,12 +34,10 @@ class Album {
 function play(el) {
     var e = document.getElementById(el)
     var strSel = e.options[e.selectedIndex].text.split(', ')
-    if (strSel[1] === jbox.albums[0].title) {
-        jbox.albums[0].play()
-    } else if (strSel[1] === jbox.albums[1].title) {
-        jbox.albums[1].play()
-    } else {
-        jbox.albums[2].play()
+    for (let i = 0; i < jbox.albums.length; i++) {
+        if (strSel[1] === jbox.albums[i].title) {
+            jbox.albums[i].play()
+        }
     }
 }
 
