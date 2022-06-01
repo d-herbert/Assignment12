@@ -31,21 +31,26 @@ class Album {
     }
 }
 
-var jbox = new Jukebox();
-const album1 = new Album('Operation Ivy', 'Energy');
-const album2 = new Album('Blink 182', 'Dude Ranch');
-const album3 = new Album('New Found Glory', 'Sticks and Stones');
+function play(el) {
+    var e = document.getElementById(el)
+    var strSel = e.options[e.selectedIndex].text.split(', ')
+    if (strSel[1] === jbox.albums[0].title) {
+        jbox.albums[0].play()
+    } else if (strSel[1] === jbox.albums[1].title) {
+        jbox.albums[1].play()
+    } else {
+        jbox.albums[2].play()
+    }
+}
 
-jbox.addAlbum(album1);
-jbox.addAlbum(album2);
-jbox.addAlbum(album3);
+function favAlbum() {
+    console.log(`Your favorite album is: ${jbox.favoriteAlbum()}`);
+}
 
-album1.play();
-album2.play();
-album2.play();
-album2.play();
-album2.play();
-album2.play();
-album3.play();
-
-console.log(`Your favorite album is: ${jbox.favoriteAlbum()}`);
+var jbox = new Jukebox()
+const album1 = new Album('Operation Ivy', 'Energy')
+const album2 = new Album('Blink 182', 'Dude Ranch')
+const album3 = new Album('New Found Glory', 'Sticks and Stones')
+jbox.addAlbum(album1)
+jbox.addAlbum(album2)
+jbox.addAlbum(album3)

@@ -10,8 +10,18 @@
 <body>
     <h1>The Music Player</h1>
     <!-- ADD DROP DOWN MENU -->
-    <!-- ADD PLAY BUTTON -->
+    <h2>select your favorite album from the dropdown</h2>
+    <div>
+        <select id="select1">
+            <option value="" style="display:none"></option>
+            <option value="1">Operation Ivy, Energy</option>
+            <option value="2">Blink 182, Dude Ranch</option>
+            <option value="3">New Found Glory, Sticks and Stones</option>
+        </select>
+        <button onclick="play('select1')">play</button>
+    </div>
     <!-- ADD SHOW FAVORITE ALBUM BUTTON -->
-    <p id="favoriteAlbum"></p>
+    <!-- <p id="favoriteAlbum"></p> -->
+    <button onclick="favAlbum()">click to reveal your favorite album</button>
 </body>
 </html>
